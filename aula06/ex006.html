@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        div#area {
+            background-color: green;
+            color: aliceblue;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+        div#area2 {
+            background-color: rgb(128, 0, 92);
+            color: aliceblue;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  mouseenter ,  mosemove ,  mousedown (clicou e segurou)  mouseup(quando solta) clique inteiro click , mouseout quando sai da div 
+    javascript dom eventes list event reference - MDN   -->
+    <div id="area" onclick="clicar()">
+        interaja
+    </div>
+ 
+    <div id="area2">
+        aqui
+    </div>
+    <script>
+        function clicar() {
+            document.getElementById('area').innerText = 'clicou';
+        }
+
+        function clicar2() {
+            document.getElementById('area2').innerText = 'clicou';
+            a.innerText = 'Entrou';
+            a.style.background = 'blue';
+        }
+
+        var a = document.getElementById('area2');
+        a.addEventListener('click', clicar2)
+    </script>
+
+</body>
+
+</html>

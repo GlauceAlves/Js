@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro JS</title>
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+            font: normal 20pt Arial;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        // abre mensagem com input , e guarda na variaavel nome
+        var nome = window.prompt('Qual é o nome?'); // retorna string log temos que converter conforme abaixo 
+        document.write(`Seu nome é <strong>${nome}</strong>?`);
+        document.write(`Seu nome maiusculo  <strong>${nome.toLocaleUpperCase()}</strong>?`);
+        var salario = window.prompt('Qual é o seu salário?'); // retorna string log temos que 
+        document.write(`Seu salario em real ${salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`);
+        console.log(`Soma ${nome}`)
+    </script>
+
+</body>
+
+</html>
