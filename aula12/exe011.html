@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN - Sistemas de Multas</title>
+    <style>
+        :root{
+            --corfundo01: darkgray;
+        }
+
+        body{
+            background-color: var(--corfundo01);
+            font: normal 18pt Arial;
+
+        }
+
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+            margin: 5px 5px;
+        }
+
+        div{
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>Controle de multas</legend>
+            <input type="number" id="txtvel" name="txtvel"> km &nbsp;
+            <input type="button" value="Verificar" onclick="calcular()">
+            <div id="res">
+                
+            </div>
+        </fieldset>
+    </div>
+
+
+
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours() 
+        function calcular(){
+            var txtv = document.querySelector(`input#txtvel`);
+            var res = document.querySelector(`div#res`);
+            var vel = Number(txtv.value);
+            res.innerHTML = `<p>Sua velocidade é ${vel} km/h</p>`
+            if ( vel > 60) {res.innerHTML += `<p>Você esta acima da velocidade.</p>`
+                document.documentElement.style.setProperty('--corfundo01', 'red');
+            }else{
+                document.documentElement.style.setProperty('--corfundo01', 'blue');
+            }
+            res.innerHTML += `<p>São ${hora} horas.</p>`
+            res.innerHTML += `<p>Dirija com segurança.</p>`
+      
+        }
+    </script>
+</body>
+
+</html>
